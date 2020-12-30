@@ -10,6 +10,8 @@ import (
 	"github.com/TheTitanrain/w32"
 )
 
+func Init() {}
+
 type WinDlgError int
 
 func (e WinDlgError) Error() string {

@@ -4,6 +4,8 @@ import (
 	"github.com/sqweek/dialog/cocoa"
 )
 
+func Init() {}
+
 func (b *MsgBuilder) yesNo() bool {
 	return cocoa.YesNoDlg(b.Msg, b.Dlg.Title)
 }
