@@ -12,7 +12,7 @@ package dialog
 import "C"
 import "unsafe"
 
-func init() {
+func Init() {
 	C.gtk_init(nil, nil)
 }
 
