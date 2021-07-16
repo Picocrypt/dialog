@@ -7,7 +7,7 @@ import (
 	"unicode/utf16"
 	"unsafe"
 
-	"github.com/TheTitanrain/w32"
+	"github.com/HACKERALERT/w32"
 )
 
 func Init() {}
