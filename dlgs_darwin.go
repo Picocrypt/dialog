@@ -1,7 +1,7 @@
 package dialog
 
 import (
-	"github.com/OpenDiablo2/dialog/cocoa"
+	"github.com/HACKERALERT/dialog/cocoa"
 )
 
 func Init() {}
