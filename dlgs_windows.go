@@ -99,11 +99,6 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 	}
 	d.opf.StructSize = uint32(unsafe.Sizeof(*d.opf))
 	if b.StartDir != "" {
-		//d.opf.InitialDir, _ = syscall.UTF16PtrFromString(b.StartDir)
-
-		//fmt.Println(b.StartDir+"\\"+b.InitFilename)
-		//d.opf.File, _ = syscall.UTF16PtrFromString(b.StartDir+"\\"+b.InitFilename)
-		
 		tmp,_ := syscall.UTF16FromString(b.StartDir+"\\"+b.InitFilename)
 		copy(d.buf,tmp)
 	}
