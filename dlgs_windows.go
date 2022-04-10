@@ -103,7 +103,9 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 
 		//fmt.Println(b.StartDir+"\\"+b.InitFilename)
 		//d.opf.File, _ = syscall.UTF16PtrFromString(b.StartDir+"\\"+b.InitFilename)
-		copy(d.buf,syscall.UTF16FromString(b.StartDir+"\\"+b.InitFilename))
+		
+		tmp,_ := syscall.UTF16FromString(b.StartDir+"\\"+b.InitFilename)
+		copy(d.buf,tmp)
 	}
 	if b.Dlg.Title != "" {
 		d.opf.Title, _ = syscall.UTF16PtrFromString(b.Dlg.Title)
