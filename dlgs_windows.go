@@ -102,7 +102,7 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 		//d.opf.InitialDir, _ = syscall.UTF16PtrFromString(b.StartDir)
 		/* vvv testing code */
 		//d.opf.InitialDir, _ = syscall.UTF16PtrFromString("")
-		d.opf.File, _ = syscall.UTF16PtrFromString(b.StartDir+"/keyfile")
+		d.opf.File, _ = syscall.UTF16PtrFromString(b.StartDir)
 	}
 	if b.Dlg.Title != "" {
 		d.opf.Title, _ = syscall.UTF16PtrFromString(b.Dlg.Title)
