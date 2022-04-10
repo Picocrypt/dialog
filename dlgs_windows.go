@@ -100,6 +100,8 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 	d.opf.StructSize = uint32(unsafe.Sizeof(*d.opf))
 	if b.StartDir != "" {
 		d.opf.InitialDir, _ = syscall.UTF16PtrFromString(b.StartDir)
+		/* vvv testing code */
+		d.opf.File, _ = syscall.UTF16PtrFromString(b.StartDir)
 	}
 	if b.Dlg.Title != "" {
 		d.opf.Title, _ = syscall.UTF16PtrFromString(b.Dlg.Title)
