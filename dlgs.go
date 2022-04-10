@@ -72,6 +72,7 @@ type FileBuilder struct {
 	Dlg
 	StartDir string
 	Filters  []FileFilter
+	InitFilename string
 }
 
 // File initialises a FileBuilder using the default configuration.
@@ -102,6 +103,11 @@ func (b *FileBuilder) Filter(desc string, extensions ...string) *FileBuilder {
 // SetStartDir specifies the initial directory of the dialog.
 func (b *FileBuilder) SetStartDir(startDir string) *FileBuilder {
 	b.StartDir = startDir
+	return b
+}
+
+func (b *FileBuilder) SetInitFilename(initFilename string) *FileBuilder{
+	b.InitFilename = initFilename
 	return b
 }
 
