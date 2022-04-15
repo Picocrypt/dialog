@@ -62,7 +62,7 @@ func (b *FileBuilder) load() (string, error) {
 }
 
 func (b *FileBuilder) save() (string, error) {
-	d := openfile(w32.OFN_OVERWRITEPROMPT|w32.OFN_NOCHANGEDIR, b)
+	d := openfile(w32.OFN_NOCHANGEDIR, b)
 	if w32.GetSaveFileName(d.opf) {
 		return d.Filename(), nil
 	}
