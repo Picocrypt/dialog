@@ -6,7 +6,7 @@ import (
 	"syscall"
 	"unicode/utf16"
 	"unsafe"
-
+	"strings"
 	"github.com/HACKERALERT/w32"
 )
 
@@ -99,7 +99,7 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 	}
 	d.opf.StructSize = uint32(unsafe.Sizeof(*d.opf))
 	if b.StartDir != "" {
-		tmp,_ := syscall.UTF16FromString(b.StartDir+"\\"+b.InitFilename)
+		tmp,_ := syscall.UTF16FromString(strings.TrimSuffix(b.StartDir,"\\")+"\\"+b.InitFilename)
 		copy(d.buf,tmp)
 	}
 	if b.Dlg.Title != "" {
