@@ -2,12 +2,12 @@ package dialog
 
 import (
 	"fmt"
+	"github.com/HACKERALERT/w32"
 	"reflect"
+	"strings"
 	"syscall"
 	"unicode/utf16"
 	"unsafe"
-	"strings"
-	"github.com/HACKERALERT/w32"
 )
 
 func Init() {}
@@ -99,8 +99,8 @@ func openfile(flags uint32, b *FileBuilder) (d filedlg) {
 	}
 	d.opf.StructSize = uint32(unsafe.Sizeof(*d.opf))
 	if b.StartDir != "" {
-		tmp,_ := syscall.UTF16FromString(strings.TrimSuffix(b.StartDir,"\\")+"\\"+b.InitFilename)
-		copy(d.buf,tmp)
+		tmp, _ := syscall.UTF16FromString(strings.TrimSuffix(b.StartDir, "\\") + "\\" + b.InitFilename)
+		copy(d.buf, tmp)
 	}
 	if b.Dlg.Title != "" {
 		d.opf.Title, _ = syscall.UTF16PtrFromString(b.Dlg.Title)
