@@ -1,7 +1,7 @@
 package dialog
 
 import (
-	"github.com/HACKERALERT/dialog/cocoa"
+	"github.com/Picocrypt/dialog/cocoa"
 )
 
 func Init() {}
