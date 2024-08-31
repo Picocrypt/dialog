@@ -2,7 +2,7 @@ package dialog
 
 import (
 	"fmt"
-	"github.com/HACKERALERT/w32"
+	"github.com/Picocrypt/w32"
 	"reflect"
 	"strings"
 	"syscall"
